@@ -23,8 +23,7 @@ jobs:
     - name: Compile CloudSim SJF
       run: |
         mkdir out
-        javac -cp "C:\Users\megha\Downloads\cloudsim-5.0\cloudsim-5.0\modules\cloudsim\target\cloudsim-4.0.jar" -d out src/custom_package/*.java
-
+        javac -cp ".:libs/cloudsim-4.0.jar" -d out src/custom_package/*.java
     - name: Run Main Class (Optional)
       run: |
-        java -cp "C:\Users\megha\Downloads\cloudsim-5.0\cloudsim-5.0\modules\cloudsim\target\cloudsim-4.0.jar:out" custom_package.SJF_Scheduler
+        java -cp ".:libs/cloudsim-4.0.jar:out" custom_package.SJF_Scheduler
